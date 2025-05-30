@@ -53,7 +53,7 @@ const fx4 = n => {
 const fx5 = (a, b) => a * b;
 
 fx1();
-console.log(fx2(2));
+fx2(2);
 console.log(fx3(2));
 console.log(fx4(2));
 console.log(fx5(2, 3));

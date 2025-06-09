@@ -1,4 +1,5 @@
 let studentInputValues = {
+    id: 0,
     name: "",
     age: "",
     address: "",
@@ -12,13 +13,23 @@ function handelRegisterOnkeyup(e) {
 }
 
 const handleRegisterOnclick = (e) => {
+    studentInputValues["id"] = 1;
+
+    let lastStudent = null;
+    if(studentList.length > 0) {
+        lastStudent = studentList[studentList.length - 1];
+        studentInputValues["id"] = lastStudent.id + 1;
+    }
+
     studentList = [...studentList, studentInputValues];
     studentInputValues = {
+        id: 0,
         name: "",
         age: "",
         address: "",
     }
     console.log(studentList);
+    loadStudentList();
 }
 
 function studentRegister() {
